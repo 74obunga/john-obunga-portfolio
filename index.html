@@ -3,155 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Obunga |Data Analyst, Data Engineer & BI Specialist</title>
- <style>
-  :root {
-    --primary: #2563eb;
-    --dark: #1f2933;
-    --light: #f8fafc;
-    --muted: #6b7280;
-    --card: #ffffff;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    font-family: "Inter", Arial, sans-serif;
-    background: var(--light);
-    color: #111827;
-    line-height: 1.6;
-  }
-
-  header {
-    background: linear-gradient(135deg, #1f2933, #111827);
-    color: white;
-    padding: 3.5rem 1rem;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 2.7rem;
-    margin-bottom: 0.5rem;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    color: #cbd5e1;
-  }
-
-  .cta {
-    margin-top: 1.5rem;
-  }
-
-  .cta a {
-    display: inline-block;
-    padding: 0.7rem 1.4rem;
-    margin: 0 0.3rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .btn-primary {
-    background: var(--primary);
-    color: white;
-  }
-
-  .btn-outline {
-    border: 2px solid #cbd5e1;
-    color: #cbd5e1;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 2.5rem auto;
-    padding: 0 1rem;
-  }
-
-  section {
-    margin-bottom: 3rem;
-  }
-
-  section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--dark);
-  }
-
-  section p {
-    color: var(--muted);
-  }
-
-  ul {
-    padding-left: 1.2rem;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .card {
-    background: var(--card);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  }
-
-  .card img {
+  <title>John Obunga | Data Engineer & BI Specialist</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #1f2933;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin-top: 0.5rem; font-size: 1.1rem; opacity: 0.9; }
+    .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+    section {
+      background: #fff;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    section h2 {
+      margin-top: 0;
+      color: #1f2933;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    ul { padding-left: 1.2rem; }
+    ul li { margin-bottom: 0.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .upload-box {
+      border: 2px dashed #cbd5e1;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 6px;
+      background: #f8fafc;
+    }
+    .contact a { color: #2563eb; text-decoration: none; }
+    footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #6b7280; }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
   }
 
-  .card-content {
-    padding: 1.2rem;
+  .modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
   }
 
-  .card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
-  }
-
-  .tag {
-    display: inline-block;
-    background: #e0e7ff;
-    color: #1e3a8a;
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 999px;
-    margin-right: 0.3rem;
-    margin-top: 0.5rem;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-    border-top: 1px solid #e5e7eb;
+  .modal span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
   }
 </style>
 </head>
 <body>
   <header>
-  <h1>John Obunga Edward</h1>
-  <p>Data Engineer & Business Intelligence Specialist</p>
+    <h1>John Obunga Edward</h1>
+    <p>Data Engineer & Business Intelligence Specialist</p>
+  </header>
 
-  <div class="cta">
-    <a href="pdfs/cv.pdf" class="btn-primary" target="_blank">Download CV</a>
-    <a href="https://github.com/74obunga" class="btn-outline" target="_blank">GitHub</a>
-  </div>
-</header>
   <div class="container">
 
     <section>
@@ -178,90 +115,35 @@
 
     <section>
   <h2>Projects & Work Gallery</h2>
-  <p>Selected data engineering and analytics projects.</p>
+  <p>A selection of dashboards, analytics solutions, and data engineering work.</p>
 
   <div class="grid">
-
     <div class="card">
-      <img src="images/dashboard1.png" alt="Power BI Dashboard">
-      <div class="card-content">
-        <h3>Financial Performance Dashboard</h3>
-        <p>Power BI dashboard tracking KPIs, ROI, and SME lending performance.</p>
-        <span class="tag">Power BI</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Finance</span>
-      </div>
+      <img src="images/dashboard1.png" alt="Power BI Financial Dashboard" />
+      <h3>Financial Performance Dashboard</h3>
+      <p>Power BI dashboard tracking KPIs, ROI, and SME lending performance.</p>
+      <span class="tag">Power BI</span>
+      <span class="tag">SQL</span>
     </div>
 
     <div class="card">
-      <img src="images/etl-architecture.png" alt="ETL Pipeline">
-      <div class="card-content">
-        <h3>ETL Pipeline Architecture</h3>
-        <p>Scalable ETL pipeline using Python, SQL, and PySpark.</p>
-        <span class="tag">Python</span>
-        <span class="tag">PySpark</span>
-        <span class="tag">ETL</span>
-      </div>
+      <img src="images/etl-architecture.png" alt="ETL Architecture" />
+      <h3>ETL Pipeline Architecture</h3>
+      <p>Scalable ETL pipeline using Python, SQL, and PySpark for multi-source data.</p>
+      <span class="tag">Python</span>
+      <span class="tag">PySpark</span>
     </div>
-
   </div>
 </section>
 
     <section>
-  <h2>Add New Work (Images & PDFs)</h2>
-  <p>
-    This portfolio is hosted on GitHub Pages. New project images and documents
-    are added by uploading files to the repository.
-  </p>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-content">
-        <h3>Upload Project Images</h3>
-        <p>
-          Add dashboard screenshots, diagrams, or visuals to:
-        </p>
-        <code>/images/</code>
-        <p style="margin-top:0.5rem;">
-          Then reference them in <code>index.html</code>.
-        </p>
+      <h2>Documents & PDFs</h2>
+      <p>Upload reports, CVs, or project documentation (PDF).</p>
+      <div class="upload-box">
+        <input type="file" accept="application/pdf" multiple />
+        <p><em>Backend required to store and display uploaded PDFs.</em></p>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-        <h3>Upload PDFs & Documents</h3>
-        <p>
-          Add CVs, certificates, and reports to:
-        </p>
-        <code>/pdfs/</code>
-        <p style="margin-top:0.5rem;">
-          Link them under the Documents section.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section>
-  <h2>Documents & PDFs</h2>
-  <ul>
-    <li>
-      <a href="pdfs/certificate-building-ai-agents.pdf" target="_blank">
-        📄 Certificate – Building AI Agents
-      </a>
-    </li>
-    <li>
-      <a href="pdfs/cv.pdf" target="_blank">
-        📄 Curriculum Vitae
-      </a>
-    </li>
-  </ul>
-</section>
-
+    </section>
 
     <section class="contact">
       <h2>Contact</h2>
@@ -276,9 +158,26 @@
   <footer>
     <p>© 2026 John Obunga. All rights reserved.</p>
   </footer>
+
+<div class="modal" id="imageModal">
+  <span onclick="closeModal()">&times;</span>
+  <img id="modalImage" src="" alt="Expanded project image" />
+</div>
+<script>
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+
+  document.querySelectorAll('.card img').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  }
+</script>
 </body>
 </html>
-
-
-
-
