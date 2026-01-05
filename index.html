@@ -101,6 +101,7 @@
 </style>
 </head>
 <body>
+<main>
   <header>
     <h1>John Obunga Edward</h1>
     <p>Data Engineer & Business Intelligence Specialist</p>
@@ -136,7 +137,7 @@
 
   <div class="grid">
     <div class="card">
-      <img loading="lazy" src="images/dashboard1.png" alt="Power BI Financial Dashboard" />
+      <img loading="lazy" role="img" src="images/dashboard1.png" alt="Power BI Financial Dashboard" />
       <h3>Financial Performance Dashboard</h3>
       <p>Power BI dashboard tracking KPIs, ROI, and SME lending performance.</p>
       <span class="tag">Power BI</span>
@@ -144,7 +145,7 @@
     </div>
 
     <div class="card">
-      <img loading="lazy" src="images/etl-architecture.png" alt="ETL Architecture" />
+      <img loading="lazy" role="img" src="images/etl-architecture.png" alt="ETL Architecture" />
       <h3>ETL Pipeline Architecture</h3>
       <p>Scalable ETL pipeline using Python, SQL, and PySpark for multi-source data.</p>
       <span class="tag">Python</span>
@@ -157,7 +158,7 @@
       <h2>Documents & PDFs</h2>
       <p>Upload reports, CVs, or project documentation (PDF).</p>
       <div class="upload-box">
-        <input type="file" accept="application/pdf" multiple />
+        <label style="display:none">File upload</label><input type="file" accept="application/pdf" multiple />
         <p><em>Backend required to store and display uploaded PDFs.</em></p>
       </div>
     </section>
@@ -175,6 +176,7 @@
   <footer>
     <p>© 2026 John Obunga. All rights reserved.</p>
   </footer>
+</main>
 
 <div class="modal" id="imageModal">
   <span onclick="closeModal()">&times;</span>
